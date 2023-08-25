@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prct</title>
+</head>
+<body>
+    <script>
+        const url1= getPromise("https://www.themealdb.com/api/json/v1/1/search.php?s=cake");
+const url2= getPromise("https://www.themealdb.com/api/json/v1/1/search.php?s=cupcake");
+const url3= getPromise("https://www.themealdb.com/api/json/v1/1/search.php?s=frechfries");
+const url4= getPromise("https://www.themealdb.com/api/json/v1/1/search.php?s=paneer");
+Promise.allSettled([url1,url2,url3]).then(result=>{
+    console.log({result});
+}).catch(error=>{
+    console.log("error")
+})
+    </script>
+</body>
+</html>
